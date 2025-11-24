@@ -11,7 +11,7 @@ const createBooksTable = `
     )`;
 
 const createOrdersTable = `
-    CREATE TABLE IF NOT EXISTS books (
+    CREATE TABLE IF NOT EXISTS orders (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         userId INTEGER NOT NULL,
         bookId INTEGER NOT NULL,
@@ -19,7 +19,7 @@ const createOrdersTable = `
     )`;
 
 const createUsersTable = `
-    CREATE TABLE IF NOT EXISTS books (
+    CREATE TABLE IF NOT EXISTS users (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         email TEXT UNIQUE NOT NULL,
         password TEXT NOT NULL
