@@ -1,27 +1,24 @@
 const { DataTypes } = require('sequelize')
 const sequelize = require('../db')
 
-const Order = sequelize.define('Order', {
+const User = sequelize.define('User', {
     id: {
         type: DataTypes.INTEGER,
         autoIncrement: true,
         primaryKey: true
     },
-    userId: {
-        type: DataTypes.INTEGER,
+    email: {
+        unique: true,
+        type: DataTypes.TEXT,
         allowNull: false
     },
-    bookId: {
-        type: DataTypes.INTEGER,
-        allowNull: false
-    },
-    quantity: {
-        type: DataTypes.INTEGER,
+    password: {
+        type: DataTypes.TEXT,
         allowNull: false
     }
 }, {
-    tableName: "orders",
+    tableName: "users",
     timestamps: false
 });
 
-module.exports = Order
+module.exports = User

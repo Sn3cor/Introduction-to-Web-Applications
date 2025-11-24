@@ -10,6 +10,6 @@ app2.listen(3002, () => {
     console.log('ordersApp works on port 3002')
 })
 
-// app3.listen(3003, () => {
-//     console.log('booksApp works on port 3003')
-// })
+app3.listen(3003, () => {
+    console.log('usersApp works on port 3003')
+})
