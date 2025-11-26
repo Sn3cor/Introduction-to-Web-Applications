@@ -59,15 +59,16 @@ router.post('/', checkToken, async (req, res) => {
     }
 
     try {
-        const newBook = Book.create({ title: title, author: author, year: Number(year) })
+        const newBook = await Book.create({ title: title, author: author, year: Number(year) })
         res.status(200).json({
             message: 'Successfully added a new book',
-            book: newBook
+            bookId: newBook.id
         })
     }
     catch (err) {
-        return res(400).json({
-            message: 'Failed to add a new book'
+        return res(500).json({
+            message: 'Failed to add a new book',
+            error: err.message
         })
     }
 
@@ -92,8 +93,9 @@ router.delete('/:bookId', checkToken, async (req, res) => {
         })
     }
     catch (err) {
-        return res.status(400).json({
-            message: 'Failed to delete a book'
+        return res.status(500).json({
+            message: 'Failed to delete a book',
+            error: err.message
         })
     }
 })
