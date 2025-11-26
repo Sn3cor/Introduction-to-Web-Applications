@@ -2,6 +2,7 @@ const express = require('express')
 const { body, validationResult } = require('express-validator')
 const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken')
+require('dotenv').config()
 
 const saltRounds = 10
 
@@ -71,7 +72,7 @@ router.post('/login', body('email').isEmail(), async (req, res) => {
             })
         }
 
-        const token = jwt.sign({ id: existingUser.id }, 'private-key', { expiresIn: '1h' })
+        const token = jwt.sign({ id: existingUser.id }, process.env.SECRET, { expiresIn: '1h' })
         res.status(200).json({
             message: 'You have successfuly signed in.',
             token: token
