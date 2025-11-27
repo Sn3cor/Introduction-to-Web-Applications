@@ -48,8 +48,8 @@ router.post('/', checkToken, async (req, res) => {
         }
 
         const newOrder = await Order.create({
-            userId: userId,
-            bookId: bookId,
+            userId: Number(userId),
+            bookId: Number(bookId),
             quantity: Number(quantity)
         })
         res.status(200).json({
@@ -100,6 +100,13 @@ router.patch("/:orderId", checkToken, async (req, res) => {
         if (!current) {
             return res.status(404).json({
                 message: 'Order not found'
+            })
+        }
+
+        const book = await fetch(`http://127.0.0.1:3001/api/books/${bookId}`)
+        if (book.status !== 200) {
+            return res.status(400).json({
+                message: 'Invalid bookId'
             })
         }
 
