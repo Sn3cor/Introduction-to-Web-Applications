@@ -10,7 +10,6 @@ router.get('/', async (req, res) => {
             return res.status(404).json({
                 message: "No books were found"
             })
-            return
         }
         res.status(200).json({
             message: "Fetched all books",
