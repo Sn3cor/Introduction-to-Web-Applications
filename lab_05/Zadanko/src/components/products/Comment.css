@@ -1,0 +1,46 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+}
+
+.toggled {
+    background-color: white;
+}
+
+
+.comment {
+    width: 700px;
+    border: 2px solid white;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.header,
+.body,
+.likes {
+    display: flex;
+    flex-direction: row;
+    padding: 1em;
+}
+
+.header {
+    border-bottom: 1px solid white;
+    gap: 2em;
+    align-items: baseline;
+}
+
+.likes {
+    gap: 2em;
+    justify-content: start;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
