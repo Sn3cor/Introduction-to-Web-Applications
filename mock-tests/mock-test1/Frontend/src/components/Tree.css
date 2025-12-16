@@ -1,0 +1,32 @@
+.level {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.triangle-left {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-color: transparent green green transparent;
+}
+
+.triangle-right {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-color: transparent transparent green green;
+}
+
+.component {
+    width: 200px;
+    /* height: 100vh; */
+}
+
+.buttons {
+    display: flex;
+    flex-direction: row;
+    padding: 1em;
+    gap: 0.5em;
+    justify-content: center;
+}
